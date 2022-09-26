@@ -18,10 +18,9 @@ describe('Access Admin Panel', () => {
         await loginScreen.continueWithStoreCredentials()
         await loginScreen.login(username , password)
         await loginScreen.goToTwoFactorAuth()
-        await loginScreen.twoFactorLogin(senha)
-        await skipScreen.skipAnnouncement()
-       
-
+        await loginScreen.twoFactorLogin(password)
+        await loginScreen.newcontinue()
+        
         expect(await myStoreScreen.myStoreLogoIsDisplayed()).toBeTruthy()
         expect (await myStoreScreen.getStoreName()).toEqual('EBAC - Shop')
     });

@@ -38,7 +38,7 @@ exports.config = {
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
-                5000)
+                10000)
 
             generation.on('exit', function (exitCode) {
                 clearTimeout(generationTimeout)

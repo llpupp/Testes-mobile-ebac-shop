@@ -5,9 +5,7 @@ class LoginScreen {
     get #username() { return $('android=new UiSelector().text("Username")') }
     get #password() { return $('android=new UiSelector().text("Password")') }
     get #twoFactorPasswordBtn() { return $('id:login_enter_password') }   
-    get #newcontinue() {
-        return $('id:close_feature_announcement_button')
-    }
+    get #newcontinue() { return $('android=new UiSelector().text("Continue")') }
 
     async setStoreAddress(url) {
        await this.#storeAddress.setValue(url)
@@ -16,10 +14,9 @@ class LoginScreen {
         await this.#continue.click()
     }
     async continueWithStoreCredentials() {
-        if (await this.#continueWithStoreCredentials.isExisting()){
-            await this.#continueWithStoreCredentials.click()
-        }
-    }    
+        await this.#continueWithStoreCredentials.click()  
+    }
+      
     async login(username, password) {
         await this.#username.setValue(username)
         await this.#password.setValue(password)
