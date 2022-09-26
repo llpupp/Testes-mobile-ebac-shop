@@ -1,18 +1,10 @@
 class LoginScreen {
-    get #storeAddress() {
-        return $('android.widget.EditText')
-    }
-    get #continue() { 
-        return $('id:bottom_button')
-    }
+    get #storeAddress() { return $('android.widget.EditText') }
+    get #continue() { return $('id:bottom_button') }
     get #continueWithStoreCredentials () { return $('id:login_site_creds') }
-
     get #username() { return $('android=new UiSelector().text("Username")') }
     get #password() { return $('android=new UiSelector().text("Password")') }
-    
-    get #twoFactorPasswordBtn() { 
-        return $('id:login_enter_password')
-    }
+    get #twoFactorPasswordBtn() { return $('id:login_enter_password') }   
     get #newcontinue() {
         return $('id:close_feature_announcement_button')
     }
