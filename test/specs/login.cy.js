@@ -4,8 +4,8 @@ const loginScreen = require("../screens/login.screen")
 const myStoreScreen = require("../screens/myStore.screen")
 
 let urlLoja = 'http://lojaebac.ebaconline.art.br/'
-let usuario = 'gerente'
-let senha = 'GD*peToHNJ1#c$sgk08EaYJQ'
+let username = 'gerente'
+let password = 'GD*peToHNJ1#c$sgk08EaYJQ'
 
 
 describe('Access Admin Panel', () => {
@@ -16,11 +16,13 @@ describe('Access Admin Panel', () => {
         await loginScreen.setStoreAddress(urlLoja)
         await loginScreen.continue()
         await loginScreen.continueWithStoreCredentials()
-        await loginScreen.login(usuario , senha)
+        await loginScreen.login(username , password)
         await loginScreen.goToTwoFactorAuth()
         await loginScreen.twoFactorLogin(senha)
-        
+        await skipScreen.skipAnnouncement()
+       
 
+        expect(await myStoreScreen.myStoreLogoIsDisplayed()).toBeTruthy()
         expect (await myStoreScreen.getStoreName()).toEqual('EBAC - Shop')
     });
-});
+})

@@ -5,15 +5,11 @@ class LoginScreen {
     get #continue() { 
         return $('id:bottom_button')
     }
-    get #continueWithStoreCredentials() {
-        return $('id:login_site_creds')
-    }
-    get #username() { 
-        return $('android=new UiSelector().text("Username")')
-    }
-    get #password() { 
-        return $('android=new UiSelector().text("Password")')
-    }
+    get #continueWithStoreCredentials () { return $('id:login_site_creds') }
+
+    get #username() { return $('android=new UiSelector().text("Username")') }
+    get #password() { return $('android=new UiSelector().text("Password")') }
+    
     get #twoFactorPasswordBtn() { 
         return $('id:login_enter_password')
     }
@@ -27,9 +23,11 @@ class LoginScreen {
     async continue() {
         await this.#continue.click()
     }
-    async continue() {
-        await this.#continueWithStoreCredentials.click()
-    }
+    async continueWithStoreCredentials() {
+        if (await this.#continueWithStoreCredentials.isExisting()){
+            await this.#continueWithStoreCredentials.click()
+        }
+    }    
     async login(username, password) {
         await this.#username.setValue(username)
         await this.#password.setValue(password)
