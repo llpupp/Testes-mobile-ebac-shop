@@ -1,2 +1,2 @@
 "Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
-"passed","Mon Sep 26 16:12:57 BRT 2022","Mon Sep 26 16:13:24 BRT 2022","27107","","Access Admin Panel","","Access Admin Panel","should login with valid credentials","should login with valid credentials",""
+"passed","Mon Sep 26 19:16:33 BRT 2022","Mon Sep 26 19:17:02 BRT 2022","28961","","Access Admin Panel","","Access Admin Panel","should login with valid credentials","should login with valid credentials",""

@@ -1,5 +1,6 @@
 const { join } = require('path')
 const allure = require('allure-commandline')
+const video = require('wdio-video-reporter')
 
 exports.config = {
     hostname: 'localhost',
@@ -30,6 +31,10 @@ exports.config = {
             outputDir: 'allure-results',
             disableWebdriverStepsReporting: false,
             disableWebdriverScreenshotsReporting: false,
+        }],
+        [video, {
+            saveAllVideos: true,       // If true, also saves videos for successful test cases
+            videoSlowdownMultiplier: 50, // Higher to get slower videos, lower for faster videos [Value 1-100]
         }]
     ],
     onComplete: function () {
