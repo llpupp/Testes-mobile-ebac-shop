@@ -1,0 +1,1 @@
+Repositório referente aos testes mobile com VSCode, appium, webdriver.io e Android Studio 
